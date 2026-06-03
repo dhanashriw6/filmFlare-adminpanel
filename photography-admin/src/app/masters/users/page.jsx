@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { getUsers, updateKycStatus } from "@/api/users";
+import { approveKycStatus, getUsers, rejectKycStatus, updateKycStatus } from "@/api/users";
 import DashboardLayout from "@/app/components/DashboardLayout";
 
 
@@ -37,28 +37,37 @@ const UsersKycList = () => {
     }
   };
 
-  const handleStatusUpdate = async (id, newStatus) => {
+  const handleApprove = async (id) => {
     try {
       setUpdatingId(id);
       setActionError(null);
       setActionSuccess(null);
       
-      await updateKycStatus(id, newStatus);
+      await approveKycStatus(id);
+      fetchUsers();
       
-      // Update local state
-      setRecords((prev) =>
-        prev.map((rec) => (rec.id === id ? { ...rec, status: newStatus } : rec))
-      );
-      
-      // Update selected record modal if open
-      if (selectedRecord && selectedRecord.id === id) {
-        setSelectedRecord((prev) => prev ? { ...prev, status: newStatus } : null);
-      }
-      
-      setActionSuccess(`KYC successfully ${newStatus}!`);
+      setActionSuccess(`KYC successfully approved!`);
       setTimeout(() => setActionSuccess(null), 2500);
     } catch (err) {
-      setActionError(err?.response?.data?.message || `Failed to update status to ${newStatus}.`);
+      setActionError(err?.response?.data?.message || `Failed to update status to approved.`);
+    } finally {
+      setUpdatingId(null);
+    }
+  };
+
+  const handleReject = async (id) => {
+    try {
+      setUpdatingId(id);
+      setActionError(null);
+      setActionSuccess(null);
+      
+      await rejectKycStatus(id);
+      fetchUsers();
+      
+      setActionSuccess(`KYC successfully rejected!`);
+      setTimeout(() => setActionSuccess(null), 2500);
+    } catch (err) {
+      setActionError(err?.response?.data?.message || `Failed to update status to rejected.`);
     } finally {
       setUpdatingId(null);
     }
@@ -391,7 +400,7 @@ const UsersKycList = () => {
                   <div className="usr-modal-actions">
                     <button
                       className="usr-btn usr-btn--danger"
-                      onClick={() => handleStatusUpdate(selectedRecord.id, "rejected")}
+                      onClick={() => handleReject(selectedRecord?.id)}
                       disabled={updatingId !== null}
                       id="usr-modal-btn-reject"
                     >
@@ -399,7 +408,7 @@ const UsersKycList = () => {
                     </button>
                     <button
                       className="usr-btn usr-btn--primary"
-                      onClick={() => handleStatusUpdate(selectedRecord.id, "approved")}
+                      onClick={() => handleApprove(selectedRecord?.id)}
                       disabled={updatingId !== null}
                       id="usr-modal-btn-approve"
                     >

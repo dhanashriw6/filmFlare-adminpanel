@@ -4,6 +4,10 @@ export const getUsers = async (payload?: any) => {
   return await apiClient.get('/admin/kyc');
 };
 
-export const updateKycStatus = async (id: number, status: string) => {
-  return await apiClient.put(`/admin/kyc/${id}`, { status });
+export const approveKycStatus = async (id: number) => {
+  return await apiClient.patch(`/admin/kyc/${id}/approve`);
+};
+
+export const rejectKycStatus = async (id: number) => {
+  return await apiClient.patch(`/admin/kyc/${id}/reject`);
 };
