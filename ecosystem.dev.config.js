@@ -3,7 +3,8 @@ module.exports = {
     {
       name: 'filmflare-admin-dev',
       script: 'node_modules/.bin/next',
-      args: 'dev',
+      args: 'start',
+      cwd: '/home/ubuntu/services/dev-filmflare-admin',
       watch: false,
       env: {
         NODE_ENV: 'development',
