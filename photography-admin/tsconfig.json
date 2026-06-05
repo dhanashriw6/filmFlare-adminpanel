@@ -34,7 +34,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/masters/commission/edit/[id]/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -72,37 +72,37 @@ const CreatePackage = () => {
     };
 
     const uploadImage = async (slot) => {
-  setImageSlots((prev) =>
-    prev.map((s) => (s.id === slot.id ? { ...s, status: "uploading" } : s))
-  );
-  try {
-    const res = await getUploadUrl({
-      document_for: "event_package",
-      document_type: "image",
-      mimetype: slot.file.type || "image/jpeg",
-      side: "front",
-    });
-    const { presignedUrl, key } = res.data.data;
+        setImageSlots((prev) =>
+            prev.map((s) => (s.id === slot.id ? { ...s, status: "uploading" } : s))
+        );
+        try {
+            const res = await getUploadUrl({
+                document_for: "event_package",
+                document_type: "image",
+                mimetype: slot.file.type || "image/jpeg",
+                side: "front",
+            });
+            const { presignedUrl, key } = res.data.data;
 
-    await fetch(presignedUrl, {
-      method: "PUT",
-      headers: { "Content-Type": slot.file.type || "image/jpeg" },
-      body: slot.file,
-    });
+            await fetch(presignedUrl, {
+                method: "PUT",
+                headers: { "Content-Type": slot.file.type || "image/jpeg" },
+                body: slot.file,
+            });
 
-    setImageSlots((prev) =>
-      prev.map((s) => (s.id === slot.id ? { ...s, status: "done", key } : s))
-    );
-    setForm((f) => ({
-      ...f,
-      images: [...f.images, { type: "insert", key, document_type: "image" }],
-    }));
-  } catch {
-    setImageSlots((prev) =>
-      prev.map((s) => (s.id === slot.id ? { ...s, status: "error" } : s))
-    );
-  }
-};
+            setImageSlots((prev) =>
+                prev.map((s) => (s.id === slot.id ? { ...s, status: "done", key } : s))
+            );
+            setForm((f) => ({
+                ...f,
+                images: [...f.images, { type: "insert", key, document_type: "image" }],
+            }));
+        } catch {
+            setImageSlots((prev) =>
+                prev.map((s) => (s.id === slot.id ? { ...s, status: "error" } : s))
+            );
+        }
+    };
 
     const retryUpload = (slot) => uploadImage(slot);
 
