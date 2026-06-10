@@ -1,0 +1,100 @@
+name: Deploy Admin Panel
+
+on:
+  push:
+    branches:
+      - dev
+      - release
+
+jobs:
+  deploy-dev:
+    name: Deploy DEV Env
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build:dev
+
+      - name: Copy built artifacts to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: ".next,public,.env.development,package.json,package-lock.json,ecosystem.dev.config.js"
+          target: "/home/${{ secrets.SSH_USER }}/services/dev-filmflare-admin"
+
+      - name: Run deploy script on server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            cd /home/${{ secrets.SSH_USER }}/services/dev-filmflare-admin
+            npm ci --omit=dev
+            pm2 reload ecosystem.dev.config.js --update-env || pm2 start ecosystem.dev.config.js
+            pm2 save
+
+  deploy-prod:
+    name: Deploy Production Env
+    if: github.event_name == 'push' && github.ref == 'refs/heads/release'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Copy built artifacts to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: ".next,public,.env.production,package.json,package-lock.json,ecosystem.prod.config.js"
+          target: "/home/${{ secrets.SSH_USER }}/services/filmflare-admin"
+
+      - name: Run deploy script on server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            cd /home/${{ secrets.SSH_USER }}/services/filmflare-admin
+            npm ci --omit=dev
+            pm2 reload ecosystem.prod.config.js --update-env || pm2 start ecosystem.prod.config.js
+            pm2 save

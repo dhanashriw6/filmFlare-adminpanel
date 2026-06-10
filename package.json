@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 4001",
     "build": "next build",
+    "build:dev": "NODE_ENV=development next build",
     "start": "next start",
+    "start:dev": "NODE_ENV=development next start -p 4001",
+    "start:prod": "NODE_ENV=production next start -p 4000",
+    "pm2:dev": "pm2 start ecosystem.dev.config.js",
+    "pm2:prod": "pm2 start ecosystem.prod.config.js",
     "lint": "eslint"
   },
   "dependencies": {
