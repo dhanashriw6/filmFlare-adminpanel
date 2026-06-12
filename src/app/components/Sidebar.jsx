@@ -24,85 +24,85 @@ const NAV_SECTIONS = [
       },
     ],
   },
-//   {
-//     sectionLabel: 'Management',
-//     items: [
-//       {
-//         id: 'photographers',
-//         label: 'Photographers',
-//         icon: (
-//           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-//             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-//             <circle cx="12" cy="13" r="4" />
-//           </svg>
-//         ),
-//         children: [
-//           {
-//             id: 'photographers-list',
-//             label: 'All Photographers',
-//             href: '/photographers',
-//             icon: (
-//               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-//                 <circle cx="9" cy="7" r="4" />
-//                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-//                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-//               </svg>
-//             ),
-//           },
-//           {
-//             id: 'photographers-pending',
-//             label: 'Pending Approvals',
-//             href: '/photographers/pending',
-//             icon: (
-//               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//                 <circle cx="12" cy="12" r="10" />
-//                 <polyline points="12 6 12 12 16 14" />
-//               </svg>
-//             ),
-//           },
-//         ],
-//       },
-//       {
-//         id: 'bookings',
-//         label: 'Bookings',
-//         icon: (
-//           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-//             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-//             <line x1="16" y1="2" x2="16" y2="6" />
-//             <line x1="8" y1="2" x2="8" y2="6" />
-//             <line x1="3" y1="10" x2="21" y2="10" />
-//           </svg>
-//         ),
-//         children: [
-//           {
-//             id: 'bookings-list',
-//             label: 'All Bookings',
-//             href: '/bookings',
-//             icon: (
-//               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-//                 <polyline points="14 2 14 8 20 8" />
-//                 <line x1="16" y1="13" x2="8" y2="13" />
-//                 <line x1="16" y1="17" x2="8" y2="17" />
-//               </svg>
-//             ),
-//           },
-//           {
-//             id: 'bookings-transactions',
-//             label: 'Transactions',
-//             href: '/bookings/transactions',
-//             icon: (
-//               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//                 <line x1="12" y1="1" x2="12" y2="23" />
-//                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-//               </svg>
-//             ),
-//           },
-//         ],
-//       },
-//     ],
-//   },
+  //   {
+  //     sectionLabel: 'Management',
+  //     items: [
+  //       {
+  //         id: 'photographers',
+  //         label: 'Photographers',
+  //         icon: (
+  //           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  //             <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+  //             <circle cx="12" cy="13" r="4" />
+  //           </svg>
+  //         ),
+  //         children: [
+  //           {
+  //             id: 'photographers-list',
+  //             label: 'All Photographers',
+  //             href: '/photographers',
+  //             icon: (
+  //               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+  //                 <circle cx="9" cy="7" r="4" />
+  //                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+  //                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  //               </svg>
+  //             ),
+  //           },
+  //           {
+  //             id: 'photographers-pending',
+  //             label: 'Pending Approvals',
+  //             href: '/photographers/pending',
+  //             icon: (
+  //               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //                 <circle cx="12" cy="12" r="10" />
+  //                 <polyline points="12 6 12 12 16 14" />
+  //               </svg>
+  //             ),
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         id: 'bookings',
+  //         label: 'Bookings',
+  //         icon: (
+  //           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  //             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+  //             <line x1="16" y1="2" x2="16" y2="6" />
+  //             <line x1="8" y1="2" x2="8" y2="6" />
+  //             <line x1="3" y1="10" x2="21" y2="10" />
+  //           </svg>
+  //         ),
+  //         children: [
+  //           {
+  //             id: 'bookings-list',
+  //             label: 'All Bookings',
+  //             href: '/bookings',
+  //             icon: (
+  //               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+  //                 <polyline points="14 2 14 8 20 8" />
+  //                 <line x1="16" y1="13" x2="8" y2="13" />
+  //                 <line x1="16" y1="17" x2="8" y2="17" />
+  //               </svg>
+  //             ),
+  //           },
+  //           {
+  //             id: 'bookings-transactions',
+  //             label: 'Transactions',
+  //             href: '/bookings/transactions',
+  //             icon: (
+  //               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  //                 <line x1="12" y1="1" x2="12" y2="23" />
+  //                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+  //               </svg>
+  //             ),
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
   {
     sectionLabel: 'Configuration',
     items: [
@@ -111,23 +111,48 @@ const NAV_SECTIONS = [
         label: 'Masters',
         icon: (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="3" width="7" height="7" rx="1.5"/>
-            <rect x="15" y="3" width="7" height="7" rx="1.5"/>
-            <rect x="2" y="14" width="7" height="7" rx="1.5"/>
-            <rect x="15" y="14" width="7" height="7" rx="1.5"/>
+            <rect x="2" y="3" width="7" height="7" rx="1.5" />
+            <rect x="15" y="3" width="7" height="7" rx="1.5" />
+            <rect x="2" y="14" width="7" height="7" rx="1.5" />
+            <rect x="15" y="14" width="7" height="7" rx="1.5" />
           </svg>
         ),
         children: [
-           {
+          {
             id: 'users',
-            label: 'Users',
+            label: 'Users List',
+            href: '/masters/user-list',
+            icon: (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            ),
+          },
+          {
+            id: 'users-kyc',
+            label: 'User Kyc Verification',
             href: '/masters/users',
             icon: (
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-<circle cx="9" cy="7" r="4"/>
-<path d="M23 21v-2a4 4 0 00-3-3.87"/>
-<path d="M16 3.13a4 4 0 010 7.75"/>
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                <path d="M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            ),
+          },
+          {
+            id: 'bank-details',
+            label: 'Bank Details',
+            href: '/masters/bank',
+            icon: (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <path d="M4 10h16" />
+                <path d="M4 16h16" />
               </svg>
             ),
           },
@@ -137,7 +162,7 @@ const NAV_SECTIONS = [
             href: '/masters/event-package',
             icon: (
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
               </svg>
             ),
           },
@@ -147,7 +172,7 @@ const NAV_SECTIONS = [
             href: '/masters/event-category',
             icon: (
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+                <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
               </svg>
             ),
           },
@@ -157,9 +182,21 @@ const NAV_SECTIONS = [
             href: '/masters/commission',
             icon: (
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"/>
-                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
               </svg>
+            ),
+          },
+          {
+            id: 'editing-package',
+            label: 'Editing Package',
+            href: '/masters/editing-package',
+            icon: (
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="7" height="9" rx="1.5" />
+                <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+              </svg>
+
             ),
           },
         ],
@@ -182,7 +219,7 @@ const NAV_SECTIONS = [
 /* ─── Sidebar ───────────────────────────────────────────────── */
 const Sidebar = ({ collapsed, onToggle }) => {
   const pathname = usePathname();
-  const router   = useRouter();
+  const router = useRouter();
   const [openGroups, setOpenGroups] = useState({ masters: true, photographers: false, bookings: false });
 
   const toggleGroup = (id) => {
@@ -219,9 +256,9 @@ const Sidebar = ({ collapsed, onToggle }) => {
 
             {section.items.map((item) => {
               const hasChildren = !!item.children;
-              const open   = openGroups[item.id];
-              const active = hasChildren 
-                ? isChildActive(item) 
+              const open = openGroups[item.id];
+              const active = hasChildren
+                ? isChildActive(item)
                 : (pathname === item.href || (item.href !== '/' && pathname?.startsWith(item.href)));
 
               return (
@@ -248,7 +285,7 @@ const Sidebar = ({ collapsed, onToggle }) => {
                         {hasChildren && (
                           <span className={`sb-trigger-chevron${open ? ' sb-trigger-chevron--open' : ''}`}>
                             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                              <polyline points="6 9 12 15 18 9"/>
+                              <polyline points="6 9 12 15 18 9" />
                             </svg>
                           </span>
                         )}
@@ -299,14 +336,14 @@ const Sidebar = ({ collapsed, onToggle }) => {
             </div>
             <button className="sb-collapse-btn" onClick={onToggle} aria-label="Collapse sidebar">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 18 9 12 15 6"/>
+                <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
           </div>
         ) : (
           <button className="sb-collapse-btn sb-collapse-btn--solo" onClick={onToggle} aria-label="Expand sidebar">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
+              <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
         )}
